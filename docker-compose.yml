@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  database: 
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=webadm
+      - POSTGRES_PASSWORD=webadm
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+    driver: local
